@@ -3,6 +3,7 @@ const getComputerChoice = () => {
 };
 
 const playRound = (playerSelection, computerSelection) => {
+  // console.log(playerSelection, computerSelection);
   if (playerSelection.toLowerCase() == computerSelection.toLowerCase()) {
     return "Draw! Both same";
   }
@@ -30,6 +31,12 @@ const playRound = (playerSelection, computerSelection) => {
   }
 };
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(playRound(playerSelection, computerSelection));
+const game = () => {
+  for (let i = 0; i < 5; i++) {
+    const playerSelection = prompt("Paper", "Rock", "Scissor");
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+  }
+};
+
+game();
